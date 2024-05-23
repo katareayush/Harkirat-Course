@@ -91,15 +91,40 @@
 
 //FUNCTIONS
 
-function sum(a,b){
-    let result = a+b;
-    return result;
-}
+// function sum(a,b){
+//     let result = a+b;
+//     return result;
+// }
 
-function displayResult(data){
-    console.log("Result of the sum is: "+data);
-}
+// function displayResult(data){
+//     console.log("Result of the sum is: "+data);
+// }
 
-function displayResultPassive(data){
-    console.log("Sum's result is: "+data);
-}   
+// function displayResultPassive(data){
+//     console.log("Sum's result is: "+data);
+// }   
+
+
+//CALLBACK
+
+// function log1(){
+//     console.log("Log 1");
+// }
+
+// function log2(){
+//     console.log("Log 2");
+// }   
+
+// function logWhatispresent(fn){
+//     fn();
+// }
+
+// logWhatispresent(log1);
+
+
+//DATE AND TIME
+
+const currentDate = new Date();
+console.log (currentDate.getDate());
+console.log (currentDate.getFullYear());
+console.log (currentDate);
