@@ -1,0 +1,56 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 100px;
+    padding-right: 120px;
+    padding-top: 25px;
+    box-shadow: 2px 1px 2px #eee;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+
+}
+
+
+.nav-right{
+    display: flex;
+    gap: 25px;
+    color: grey;
+    font-family: poppins,sans-serif;
+}
+.pic{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-right:hover{
+    color: #4248a5;
+    cursor: pointer;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    color: #666;
+
+}
+
+.main1{
+    display: flex;
+    justify-content: center;
+    color: #666;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+}
+
+button{
+border: none;
+background-color: #387ed1;  
+padding: 10px 30px 10px 30px;
+font-size: 18px;
+font-weight: 400;
+color: white;
+}
