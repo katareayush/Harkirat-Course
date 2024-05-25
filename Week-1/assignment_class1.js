@@ -14,6 +14,7 @@
 // }
 
 // setTimeout(time, 1000);
+// using callbacks
 
 function printTime() {
 const currentTime = new Date();
