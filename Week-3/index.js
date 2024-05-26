@@ -1,25 +1,44 @@
 const express = require('express');
 const app= express();
 
-app.get('/health-checkup', function(req, res){
-    const username=req.headers.username;
-    const password=req.headers.password;
-    const kidneyId=req.query.kidneyId;
+app.use(express.json());
 
-    if(username==="admin" && password==="admin"){
-        res.status(400).json({"msg": "Something went wrong"})
-        return
-    }
+// app.get('/health-checkup', function(req, res){
+//     const username=req.headers.username;
+//     const password=req.headers.password;
+//     const kidneyId=req.query.kidneyId;
+
+//     if(username !="admin" || password !="admin"){
+//         res.status(400).json({"msg": "Something went wrong"})
+//         return
+//     }
     
 
-        if (kidneyId ==1 || kidneyId==2){
-            res.status(400).json({"msg": "Something went wrong"})
-            return
-        }
-        
-        //do something with kidney here
-        
-        res.json({
-            msg: "Your kidney is fine"
-        })
-    });
+//     if (kidneyId !=1 &&  kidneyId !=2){
+//         res.status(400).json({"msg": "Something went wrong"})
+//         return
+//     }
+//     //do something with kidney here
+//     res.json({
+//         msg: "Your kidney is fine"
+//         })
+//     });
+
+
+app.post("/health-checkup", function(req, res){
+    const kidneys=req.body.kidneys;
+    const kidneyLength=kidneys.length;
+
+    res.send("Your kidney length is "+kidneyLength)
+});
+
+//global catches all
+
+app.use(function(err,req,res,next){
+    res.json({
+        msg: "Something went wrong in our server"
+    })
+    console.log("Something went wrong in our server")
+});
+
+app.listen(3006);
