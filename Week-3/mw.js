@@ -15,7 +15,7 @@ function isMiddlewareOldenough(req,res,next){
   }
   
 // app.use(isMiddlewareOldenough); //this will run for all routes
-app.get("/ride1", isMiddlewareOldenough, function(req,res){ //we can remoce the isMiddlewareOldenough from here as we have added it to the app.use
+app.get("/ride1", isMiddlewareOldenough, function(req,res){ //we can remove the isMiddlewareOldenough from here as we have added it to the app.use
   res.json({msg:"You have succesfully booked a ride 1!"
     })
 })
