@@ -4,7 +4,7 @@ import axios from "axios";
 
 
 function App() {
-  const [selectedId,setSelectedId] = useState(1);
+  // const [selectedId,setSelectedId] = useState(1);
   return <div>
     <button onClick={function(){
       setSelectedId(1);
