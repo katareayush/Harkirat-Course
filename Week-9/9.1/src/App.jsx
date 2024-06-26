@@ -1,33 +1,25 @@
-import React, { useState } from 'react'
-import './App.css'
+import { useEffect, useState } from 'react';
 
 function App() {
+  const [count, setCount] = useState(0);
+
+  useInterval(() => {
+    setCount(c => c + 1);
+  }, 1000)
 
   return (
-    <div> 
-     <MyComponent />
-    </div>
+    <>
+      Timer is at {count}
+    </>
   )
 }
 
-class MyComponent extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { count: 0 };
-  }
+const useInterval = (callback, delay) => {
+  useEffect(() => {
+    const intervalId = setInterval(callback, delay);
 
-  incrementCount = () => {
-    this.setState({ count: this.state.count + 1 });
-  }
-
-  render() {
-    return (
-       <div>
-        <p>{this.state.count}</p>
-        <button onClick={this.incrementCount}>Increment</button>
-      </div>
-    );
-  }
-}
+    return () => clearInterval(intervalId);
+  }, [callback, delay]);
+};  
 
 export default App
